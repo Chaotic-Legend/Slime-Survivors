@@ -1,0 +1,4 @@
+res://scenes/mob.tscn
+res://scenes/gun.tscn
+res://scenes/ui.tscn
+res://scripts/gun.gd

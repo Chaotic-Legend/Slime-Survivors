@@ -1,0 +1,136 @@
+[gd_scene format=3 uid="uid://dpb7a428agt0f"]
+
+[ext_resource type="Script" uid="uid://2y5opucc7uwt" path="res://scripts/ui.gd" id="1_nt7q6"]
+
+[node name="UI" type="CanvasLayer" unique_id=34700770]
+process_mode = 3
+layer = 100
+script = ExtResource("1_nt7q6")
+
+[node name="HUD" type="Control" parent="." unique_id=247678836]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD" unique_id=268379868]
+layout_mode = 1
+offset_right = 294.0
+offset_bottom = 226.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/MarginContainer" unique_id=644276796]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="ScoreLabel" type="Label" parent="HUD/MarginContainer/VBoxContainer" unique_id=368567753]
+unique_name_in_owner = true
+z_index = 100
+z_as_relative = false
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.57254905, 0.1764706, 1)
+theme_override_font_sizes/font_size = 50
+text = "SCORE: 0"
+vertical_alignment = 1
+
+[node name="KillsLabel" type="Label" parent="HUD/MarginContainer/VBoxContainer" unique_id=1767234914]
+unique_name_in_owner = true
+z_index = 100
+z_as_relative = false
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.57254905, 0.1764706, 1)
+theme_override_font_sizes/font_size = 50
+text = "KILLS: 0"
+vertical_alignment = 1
+
+[node name="PauseMenu" type="Control" parent="." unique_id=635555223]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="PauseMenu" unique_id=1661413465]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.439216)
+
+[node name="CenterContainer" type="CenterContainer" parent="PauseMenu/ColorRect" unique_id=1568581005]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PauseLabel" type="Label" parent="PauseMenu/ColorRect/CenterContainer" unique_id=1887675151]
+layout_mode = 2
+theme_override_font_sizes/font_size = 124
+text = "PAUSED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GameOver" type="Control" parent="." unique_id=976340170]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="GameOver" unique_id=815040798]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.439216)
+
+[node name="CenterContainer" type="CenterContainer" parent="GameOver/ColorRect" unique_id=254822973]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameOver/ColorRect/CenterContainer" unique_id=2143987675]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="GameOverLabel" type="Label" parent="GameOver/ColorRect/CenterContainer/VBoxContainer" unique_id=1318791518]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 160
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HighScoreLabel" type="Label" parent="GameOver/ColorRect/CenterContainer/VBoxContainer" unique_id=5329521]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "HIGH SCORE: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RetryButton" type="Button" parent="GameOver/ColorRect/CenterContainer/VBoxContainer" unique_id=3417364]
+layout_mode = 2
+theme_override_font_sizes/font_size = 70
+text = "PLAY AGAIN?"
+icon_alignment = 1
+
+[connection signal="pressed" from="GameOver/ColorRect/CenterContainer/VBoxContainer/RetryButton" to="." method="_on_retry_button_pressed"]
