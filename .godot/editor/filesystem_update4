@@ -1,4 +1,15 @@
-res://scenes/mob.tscn
-res://scenes/gun.tscn
 res://scenes/ui.tscn
+res://scripts/game.gd
 res://scripts/gun.gd
+res://scenes/survivors_game.tscn
+res://scenes/gun.tscn
+res://scenes/player.tscn
+res://scenes/mob.tscn
+res://scenes/pine_tree.tscn
+res://scenes/bullet_2d.tscn
+res://scripts/bullet_2d.gd
+res://scripts/mob.gd
+res://scripts/player.gd
+res://scripts/pine_tree.gd
+res://scripts/smoke_explosion.gd
+res://scenes/happy_boo.tscn

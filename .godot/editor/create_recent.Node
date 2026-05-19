@@ -1,4 +1,5 @@
 AudioStreamPlayer2D
+Label
 AudioStreamPlayer
 CenterContainer
 Control
@@ -6,5 +7,4 @@ Panel
 CanvasLayer
 VBoxContainer
 MarginContainer
-Label
 Button

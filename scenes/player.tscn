@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bjpua3hfywlnl" path="res://scripts/player.gd" id="1_73bic"]
 [ext_resource type="PackedScene" uid="uid://pbmyh1qru7p" path="res://scenes/happy_boo.tscn" id="2_bl5ih"]
 [ext_resource type="PackedScene" uid="uid://cphcr81upg72i" path="res://scenes/gun.tscn" id="3_bt0kc"]
+[ext_resource type="AudioStream" uid="uid://m02xe48w7hy" path="res://assets/audio/death.wav" id="4_dqkch"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_csncd"]
 size = Vector2(66, 38)
@@ -19,6 +20,7 @@ border_width_bottom = 2
 border_color = Color(0, 0, 0, 1)
 
 [node name="Player" type="CharacterBody2D" unique_id=1546396198]
+collision_mask = 5
 motion_mode = 1
 script = ExtResource("1_73bic")
 
@@ -45,10 +47,15 @@ shape = SubResource("RectangleShape2D_kfffa")
 [node name="HealthBar" type="ProgressBar" parent="." unique_id=384523252]
 unique_name_in_owner = true
 z_index = 100
-offset_left = -83.0
-offset_top = -185.0
-offset_right = 87.0
-offset_bottom = -150.0
+offset_left = -85.0
+offset_top = -170.0
+offset_right = 85.0
+offset_bottom = -135.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_a5sny")
 value = 100.0
 show_percentage = false
+
+[node name="DeathSound" type="AudioStreamPlayer2D" parent="." unique_id=1835642671]
+stream = ExtResource("4_dqkch")
+volume_db = 8.0
+max_polyphony = 8

@@ -3,16 +3,17 @@ extends CharacterBody2D
 signal health_depleted
 
 @onready var health_bar = $HealthBar
-
-var health := 100.0
-var fill_style: StyleBoxFlat
-var ratio: float = 1.0
+@onready var death_sound = $DeathSound
 
 const MAX_HEALTH := 100.0
 const SPEED := 600.0
 const DAMAGE_RATE := 6.0
 const FULL_COLOR := Color("#9fdd51")
 const LOW_COLOR := Color("#9f0000")
+
+var health := 100.0
+var fill_style: StyleBoxFlat
+var ratio: float = 1.0
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_PAUSABLE
@@ -37,6 +38,7 @@ func _physics_process(delta):
 		health = clamp(health, 0.0, MAX_HEALTH)
 		update_health_ui()
 		if health <= 0.0:
+			death_sound.play()
 			health_depleted.emit()
 
 func _process(_delta):

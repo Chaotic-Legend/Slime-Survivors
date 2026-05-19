@@ -5,6 +5,7 @@ extends Area2D
 const SHOOT_SOUND = preload("res://assets/audio/shoot.wav")
 const BULLET = preload("res://scenes/bullet_2d.tscn")
 const MUZZLE_FLASH = preload("res://scenes/muzzle_flash.tscn")
+var can_shoot := false
 
 func _process(_delta):
 	var enemies_in_range = get_overlapping_bodies()
@@ -19,6 +20,8 @@ func _process(_delta):
 			closest_enemy = enemy
 	if closest_enemy:
 		look_at(closest_enemy.global_position)
+	if not can_shoot:
+		return
 
 func shoot():
 	shoot_sound.pitch_scale = randf_range(0.95, 1.05)
@@ -31,5 +34,7 @@ func shoot():
 	flash.top_level = true
 	get_tree().current_scene.add_child(flash)
 
-func _on_timer_timeout() -> void:
+func _on_shoot_timer_timeout() -> void:
+	if not can_shoot:
+		return
 	shoot()

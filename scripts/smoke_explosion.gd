@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var smoke = $Smoke
+
 @onready var anim = $AnimationPlayer
 
 func _ready():

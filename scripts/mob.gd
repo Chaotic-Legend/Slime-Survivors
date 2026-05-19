@@ -1,9 +1,10 @@
 extends CharacterBody2D
 
 signal died
+
 @onready var slime_sound = $SlimeSound
 @onready var player = get_node("/root/Game/Player")
-var speed = randf_range(200, 300)
+var speed = randf_range(200, 350)
 var health = 3
 
 func _ready():
