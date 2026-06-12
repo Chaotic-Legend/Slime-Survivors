@@ -3,7 +3,9 @@ extends CharacterBody2D
 signal died
 
 @onready var slime_sound = $SlimeSound
+@onready var hurt_sound = $HurtSound
 @onready var player = get_node("/root/Game/Player")
+
 var speed = randf_range(200, 350)
 var health = 3
 
@@ -17,15 +19,18 @@ func _physics_process(_delta):
 	move_and_slide()
 
 func take_damage():
+	if health <= 0:
+		return
 	%Slime.play_hurt()
+	hurt_sound.pitch_scale = randf_range(0.9, 1.1)
+	hurt_sound.play()
 	health -= 1
 	if health <= 0:
 		died.emit()
-		var sound = $SlimeSound
-		sound.reparent(get_tree().current_scene)
-		sound.global_position = global_position
-		sound.play()
-		sound.finished.connect(sound.queue_free)
+		slime_sound.reparent(get_tree().current_scene)
+		slime_sound.global_position = global_position
+		slime_sound.play()
+		slime_sound.finished.connect(slime_sound.queue_free)
 		var smoke_scene = preload("res://scenes/smoke_explosion.tscn")
 		var smoke = smoke_scene.instantiate()
 		smoke.process_mode = Node.PROCESS_MODE_PAUSABLE

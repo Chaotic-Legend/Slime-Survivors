@@ -2,7 +2,7 @@ extends Area2D
 
 @onready var shoot_sound = $ShootSound
 
-const SHOOT_SOUND = preload("res://assets/audio/shoot.wav")
+const SHOOT_SOUND = preload("res://assets/audio/gun_shoot.wav")
 const BULLET = preload("res://scenes/bullet_2d.tscn")
 const MUZZLE_FLASH = preload("res://scenes/muzzle_flash.tscn")
 var can_shoot := false

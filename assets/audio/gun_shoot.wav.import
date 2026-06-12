@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://dvcnufih3mfqi"
-path="res://.godot/imported/slime.wav-166ad700c1d8085dba20841bead9eb11.sample"
+uid="uid://b1gmb01hj340"
+path="res://.godot/imported/gun_shoot.wav-a92c75b0b7511f0b2eead499a90887bd.sample"
 
 [deps]
 
-source_file="res://assets/audio/slime.wav"
-dest_files=["res://.godot/imported/slime.wav-166ad700c1d8085dba20841bead9eb11.sample"]
+source_file="res://assets/audio/gun_shoot.wav"
+dest_files=["res://.godot/imported/gun_shoot.wav-a92c75b0b7511f0b2eead499a90887bd.sample"]
 
 [params]
 

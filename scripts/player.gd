@@ -7,6 +7,7 @@ signal health_depleted
 
 const MAX_HEALTH := 100.0
 const SPEED := 600.0
+const SPRINT_MULTIPLIER := 1.5
 const DAMAGE_RATE := 6.0
 const FULL_COLOR := Color("#9fdd51")
 const LOW_COLOR := Color("#9f0000")
@@ -26,7 +27,10 @@ func _ready() -> void:
 
 func _physics_process(delta):
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
-	velocity = direction * SPEED
+	var current_speed = SPEED
+	if Input.is_action_pressed("sprint"):
+		current_speed *= SPRINT_MULTIPLIER
+	velocity = direction * current_speed
 	move_and_slide()
 	if velocity.length() > 0.0:
 		%HappyBoo.play_walk_animation()

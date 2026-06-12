@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bhbi365xsk225" path="res://scripts/gun.gd" id="1_sluxj"]
 [ext_resource type="Texture2D" uid="uid://cswb5do8rrj7q" path="res://assets/pistol/pistol.png" id="2_idur6"]
-[ext_resource type="AudioStream" uid="uid://cuhqruqpf3la6" path="res://assets/audio/shoot.wav" id="3_gp1hk"]
+[ext_resource type="AudioStream" uid="uid://b1gmb01hj340" path="res://assets/audio/gun_shoot.wav" id="3_gp1hk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nthgb"]
 radius = 987.0
@@ -36,7 +36,7 @@ autostart = true
 
 [node name="ShootSound" type="AudioStreamPlayer2D" parent="." unique_id=1609844886]
 stream = ExtResource("3_gp1hk")
-volume_db = 4.0
+volume_db = 6.0
 max_polyphony = 8
 
 [connection signal="timeout" from="Timer" to="." method="_on_shoot_timer_timeout"]

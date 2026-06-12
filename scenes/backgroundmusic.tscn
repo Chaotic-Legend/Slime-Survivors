@@ -4,6 +4,6 @@
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" unique_id=1542360805]
 stream = ExtResource("1_dd3px")
-volume_db = 10.0
+volume_db = 2.0
 autoplay = true
 parameters/looping = true
